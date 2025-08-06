@@ -13,7 +13,7 @@ connectToMongo().then(() => {
     app.use('/api/notes', require('./routes/notes'));
 
     app.get('/', (req, res) => {
-        res.send("Hello World");
+        // res.send("Hello World");
     });
 
     app.listen(port, () => {
