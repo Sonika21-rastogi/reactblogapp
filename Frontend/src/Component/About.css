@@ -1,0 +1,32 @@
+  /* Center all accordion header text, make it bold and black */
+  .accordion-button {
+    justify-content: center; /* center horizontally */
+    color: black !important; /* black text */
+    font-weight: bold;       /* bold text */
+    text-align: center;      /* center text inside */
+  }
+.custom-accordion-button:focus {
+  box-shadow: none !important;
+  background-color: white !important; /* Keep white on focus */
+}
+  /* Center text, make black and bold */
+  .accordion-button {
+    justify-content: center; /* center the text */
+    color: black !important; /* black text */
+    font-weight: bold;       /* bold text */
+  }
+  .secure-btn {
+  font-weight: bold;
+  color: black !important;
+  justify-content: center;
+}
+
+@media (min-width: 992px) {  /* lg breakpoint in Bootstrap */
+  .accordion-button {
+    justify-content: center !important;
+    color: black !important;
+    font-weight: bold !important;     /* bold on laptop */
+    text-align: center !important;
+    font-size: 18px;                  /* bigger font on laptop */
+  }
+}
