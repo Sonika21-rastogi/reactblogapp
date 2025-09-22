@@ -1,13 +1,17 @@
-const connectToMongo = require('./db');
+require("dotenv").config({ path: __dirname + "/.env" });
+const connectToMongo = require("./db");
+var cors = require('cors');
+
+
+connectToMongo();
+
 const express = require('express');
 const app = express();
-require('dotenv').config();
-
+app.use(cors())
 app.use(express.json());
 
 const port = process.env.PORT || 5000;
 
-// First connect to MongoDB, then start the server
 connectToMongo().then(() => {
     app.use('/api/auth', require('./routes/auth'));
     app.use('/api/notes', require('./routes/notes'));
