@@ -11,7 +11,7 @@ const NoteState = (props) => {
 
   // Get All Notes
   const getNotes = async () => {
-    console.log("Saved Token:", localStorage.getItem("token"));
+    console.log("Saved Token:", localStorage.getItem('token'));
     const response = await fetch(`${host}/api/notes/fetchallnotes`, {
       method: "GET",
       headers: {

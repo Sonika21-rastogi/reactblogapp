@@ -10,6 +10,15 @@ const app = express();
 app.use(cors())
 app.use(express.json());
 
+// ✅ CORS setup
+// Replace with your Vercel frontend URL
+app.use(cors({
+    origin: [
+        "https://i-notebook-frontend-ebon.vercel.app/", // live frontend
+        "http://localhost:3000"                 // local dev frontend
+    ]
+}));
+
 const port = process.env.PORT || 5000;
 
 connectToMongo().then(() => {

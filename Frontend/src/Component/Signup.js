@@ -10,8 +10,10 @@ const Signup = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const {name, email, password} = credential
-    const response = await fetch("http://localhost:5000/api/auth/createuser", {
+    const {name, email, password} = credential;
+    
+  
+    const response = await fetch("https://inotebook-backend-1-j1r1.onrender.com/api/auth/createuser", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -23,7 +25,7 @@ const Signup = (props) => {
     console.log("User Token:", json);
     if (json.success) {
       // save the token to localstorage
-      localStorage.setItem('token', json.authtoken)
+      localStorage.setItem('token', json.authToken)
       props.showAlert("Account Created Succsessfully", "success");
       navigate("/");
     } else {
@@ -38,7 +40,7 @@ const Signup = (props) => {
 
   return (
      <div className="mb-3">
-      <h1 classNAme= "my-3">Create an account to use iNotebook </h1>
+      <h1 className= "my-3">Create an account to use iNotebook </h1>
       <form onSubmit={handleSubmit}>
         <div className="my-3">
           <label htmlFor="name" className="form-label">Name</label>
@@ -52,11 +54,11 @@ const Signup = (props) => {
         </div>
         <div className="mb-3">
           <label htmlFor="password" className="form-label">Password</label>
-          <input type="password" className="form-control" id="password" name="password" onChange={onChange}  minLength={8}   required autoComplete="new-password" />
+          <input type="password" className="form-control" id="password" name="password" onChange={onChange}  minLength={5}   required autoComplete="new-password" />
         </div>
         <div className="mb-3">
           <label htmlFor="cPassword" className="form-label">Confirm Password</label>
-          <input type="password" className="form-control" name="cpassword" id="cpassword"  minLength={8}   required autoComplete="new-password" />
+          <input type="password" className="form-control" name="cpassword" id="cpassword"  minLength={5}   required autoComplete="new-password" />
         </div>
         <div className="mb-3 form-check">
           <input type="checkbox" className="form-check-input" id="exampleCheck1" />
